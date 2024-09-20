@@ -1,159 +1,285 @@
-<!DOCTYPE html>
+g<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Post</title>
+    <title>About Us - Craft Innovations</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        font-family: 'Arial', sans-serif;
-        line-height: 1.6;
-        cursor: url('i.png'), auto; /* Adjust the path as necessary */
-        background-color: #f4f4f4;
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            cursor: url('i.png'), auto; /* Adjust the path as necessary */
+            background-color: #f4f4f4;
 
-    }
-    /* Minecraft-Style Header and Navigation Styling */
-    @font-face {
-        font-family: 'MinecraftFont';
-        src: url('Cave-Story.ttf'); /* You need to add the Minecraft font file to your server */
-    }
- /* Header and Navigation Styling */
- header {
-        /*background-color: black;*/
+        }
+        /* Minecraft-Style Header and Navigation Styling */
+        @font-face {
+            font-family: 'MinecraftFont';
+            src: url('Cave-Story.ttf'); /* You need to add the Minecraft font file to your server */
+        }
+
+        /* Header and Navigation Styling */
+        header {
+            /*background-color: black;*/
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header img {
+            height: 120px;
+            margin-left: 60% ;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            margin-right: 120px;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+/*
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }*/
+
+
+        nav ul li a {
+            font-family: 'MinecraftFont', sans-serif;
+            color: #fff;
+            font-size: 28px;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #6cb646;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #006ac4;
+            cursor: url('ii.png'), auto; 
+        }
+
+        /* Hero Section Styling */
+        .hero {
+            background-image: url('hero-image.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 20px;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(b.png);
+            /*background: rgba(0, 0, 0, 0.5);*/
+            background-size: cover; /* This scales the image to cover the entire area */
+            background-position: center; /* This centers the image */
+            background-repeat: no-repeat; /* This prevents the image from repeating */
+        }
+        .sameh{
+            color: aqua;
+        }
+
+        /* About Section Styling */
+        .about-section {
+            padding: 50px 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .about-section h2 {
+            color: #006ac4;
+            font-family: 'MinecraftFont', sans-serif;
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 18px;
+            color: #555;
+        }
+
+        /* Values Section Styling */
+        .values-section {
+            background-color: #ffffff;
+            padding: 50px 20px;
+        }
+        .values-section h2{
+            text-align: center;
+            color: #006ac4;
+            font-family: 'MinecraftFont', sans-serif;
+            font-size: 60px;
+        }
+
+        .values-container {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+
+        .value-card {
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            padding: 30px;
+            width: 30%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .value-card h3 {
+            color: #6cb646;
+            font-family: 'MinecraftFont', sans-serif;
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .value-card p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* Our Team Section Styling 
+        .team-section {
+            padding: 50px 20px;
+            background-color:#006ac4;
+            color: white;
+            text-align: center;
+        }
+
+        .team-section h2 {
+            font-family: 'MinecraftFont', sans-serif;
+            font-size: 54px;
+            margin-bottom: 40px;
+        }
+
+        .team-members {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .team-member {
+            text-align: center;
+            width: 30%;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+
+        .team-member h4 {
+            margin-top: 15px;
+            color: #ffffff;
+        }
+
+        .team-member p {
+            color: #d1d1d1;
+            font-size: 14px;
+        }
+*/
+    /* Contact Us Section Styling */
+    .contact-section {
+        background-color: #006ac4;
         color: white;
-        padding: 20px;
+        text-align: center;
+    }
+
+    .contact-section h2 {
+        font-family: 'MinecraftFont', sans-serif;
+        font-size: 54px;
+        margin-bottom: 40px;
+    }
+
+    .contact-details {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
     }
 
-    header img {
-        height: 120px;
-        margin-left: 60% ;
+    .contact-detail {
+        text-align: center;
+        margin: 20px 0;
     }
 
-    nav ul {
-        list-style: none;
-        display: flex;
-        margin: 0;
-        padding: 0;
-        margin-right: 120px;
+    .contact-detail img {
+        width: 60px;
+        height: 60px;
     }
 
-    nav ul li {
-        margin-left: 20px;
+    .contact-detail h4 {
+        margin-top: 10px;
+        color: #ffffff;
+        font-size: 24px;
     }
-/*
-    nav ul li a {
-        color: white;
+
+    .contact-detail a {
+        color: #d1d1d1;
+        font-size: 18px;
         text-decoration: none;
-        font-size: 16px;
     }
 
-    nav ul li a:hover {
+    .contact-detail a:hover {
+        color: #ffffff;
         text-decoration: underline;
-    }*/
-
-
-    nav ul li a {
-        font-family: 'MinecraftFont', sans-serif;
-        color: #fff;
-        font-size: 28px;
-        text-decoration: none;
-        padding: 10px 20px;
-        background-color: #6cb646;
-        border-radius: 4px;
-        transition: background-color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-        background-color: #006ac4;
         cursor: url('ii.png'), auto; 
     }
-
-    /* Container Styles */
-    .container {
-        flex: 1;
-        width: 80%;
-        margin: 20px auto;
-        background-color: white;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    h1 {
-        color: #333;
-    }
-
-    h3 {
-        color: #0056b3;
-    }
-
-    p {
-        color: #555;
-        line-height: 1.6;
-    }
-
-    ul {
-        margin: 10px 0;
-        padding-left: 20px;
-    }
-
-    ul li {
-        margin-bottom: 8px;
-    }
-    .container a{
-        color: #006ac4;
-        text-decoration: none; 
-        transition: .5s;
-
-    }
-    .container a:hover {
-            color: #6cb646;
-            text-decoration: underline;
-            cursor: url('ii.png'), auto; 
-            
+    
+        /* Footer Styling */
+        footer {
+            background-color: #333;
+            color: #bbb;
+            text-align: center;
+            padding: 20px 0;
         }
 
-    .apply-btn {
-        display: inline-block;
-        background-color: #006ac4;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        text-decoration: none;
-        transition: background-color 0.3s ease;
-    }
-
-    .apply-btn:hover {
-        background-color: #6cb646;
-        cursor: url('ii.png'), auto; 
-    }
-
-
-    /* Footer Styling */
-    footer {
-        background-color: #333;
-        color: #bbb;
-        text-align: center;
-        padding: 20px 0;
-        margin-top: auto; /* Ensures footer is pushed to the bottom */
-    }
-
-    footer p {
-        margin: 0;
-        font-family: 'MinecraftFont', sans-serif;
-        font-size: larger;
-        color: #6cb646;
-    }
+        footer p {
+            margin: 0;
+            font-family: 'MinecraftFont', sans-serif;
+            font-size: larger;
+            color: #6cb646;
+        }
 
         /* Responsive Media Queries */
         @media (max-width: 768px) {
@@ -225,8 +351,8 @@
     </style>
 </head>
 <body>
-     <!-- Header Section -->
-     <header>
+    <!-- Header Section -->
+    <header>
         <a href="index.html"><img src="c.png" alt="Craft Innovations Logo"></a>
         <nav>
             <ul>
@@ -237,28 +363,84 @@
         </nav>
     </header>
 
-    <div class="container">
-    <h1>Open Positions</h1>
-    <hr>
-    
-    <!-- Software Engineer Job Post -->
-    <a href="softwareengineer.html">
-        Software Engineer
-    </a>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="overlay"></div>
+        <div class="sameh">
+            <h1>About Craft Innovations</h1>
+            <p>Transforming businesses with cutting-edge IT solutions</p>
+        </div>
+    </div>
 
-    <br><br>
+    <!-- About Section -->
+    <section class="about-section">
+        <h2>About Us</h2>
+        <p>At Craft Innovations, we specialize in transforming businesses through innovative IT solutions. Our mission is to empower companies by improving, developing, and creating tailored systems that enhance performance and boost operational efficiency. From optimizing existing infrastructures to building cutting-edge technologies, we are committed to delivering exceptional value and helping businesses stay ahead in today’s fast-paced digital landscape.</p>
+    </section>
 
+    <!-- Values Section -->
+    <section class="values-section">
+        <h2>Our Values</h2>
+        <div class="values-container">
+            <div class="value-card">
+                <h3>Innovation</h3>
+                <p>We believe in pushing the boundaries of technology to deliver innovative solutions that drive growth and efficiency.</p>
+            </div>
+            <div class="value-card">
+                <h3>Excellence</h3>
+                <p>Our commitment to excellence ensures that we always provide high-quality, scalable systems tailored to our clients' needs.</p>
+            </div>
+            <div class="value-card">
+                <h3>Collaboration</h3>
+                <p>We value teamwork and collaboration, working closely with our clients to understand and solve their unique challenges.</p>
+            </div>
+        </div>
+    </section>
 
-    <!-- Frontend Developer Job Post -->
-     <!--
-    <a href="mailto:hr@craftinnovationsgroup.com?subject=Application for Frontend Developer Position&body=Dear HR, %0D%0A%0D%0APlease find my CV and Profile attached for the Frontend Developer position.%0D%0A%0D%0ABest regards,%0D%0A[Your Name]" target="_blank">
-        Frontend Developer
-    </a>
-    -->
+    <!-- Our Team Section 
+    <section class="team-section">
+        <h2>Contact Us</h2>
+        <div class="team-members">
+            <div class="team-member">
+                <img src="team1.jpg" alt="Team Member 1">
+                <h4>John Doe</h4>
+                <p>Founder & CEO</p>
+            </div>
+            <div class="team-member">
+                <img src="team2.jpg" alt="Team Member 2">
+                <h4>Jane Smith</h4>
+                <p>Lead Developer</p>
+            </div>
+            <div class="team-member">
+                <img src="team3.jpg" alt="Team Member 3">
+                <h4>Mark Johnson</h4>
+                <p>Project Manager</p>
+            </div>
+        </div>
+    </section>-->
 
-</div>
-<footer>
-    <p>&copy; 2024 Craft Innovations. All rights reserved.</p>
-</footer>
+    <!-- Contact Us Section -->
+<section class="contact-section">
+    <h2>Contact Us</h2>
+    <div class="contact-details">
+        <div class="contact-detail">
+            <a href="https://www.linkedin.com/company/craftinnovations/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BWMtvz9%2BnQSmUItEgqwNiig%3D%3D" target="_blank">
+                <i class="fab fa-linkedin" style="font-size: 60px; color: white;"></i>
+            </a>
+            <h4>Connect with us on LinkedIn</h4>
+        </div>
+        <div class="contact-detail">
+            <a href="mailto:info@craftinnovationsgroup.com">
+            <i class="fas fa-envelope" style="font-size: 60px; color: white;"></i>
+            </a>
+            <h4>Email Us</h4>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Craft Innovations. All rights reserved.</p>
+    </footer>
 </body>
 </html>
