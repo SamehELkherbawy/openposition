@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Post</title>
+    <style>
+        html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        cursor: url('i.png'), auto; /* Adjust the path as necessary */
+        background-color: #f4f4f4;
+
+    }
+    /* Minecraft-Style Header and Navigation Styling */
+    @font-face {
+        font-family: 'MinecraftFont';
+        src: url('/Cave-Story.ttf'); /* You need to add the Minecraft font file to your server */
+    }
+ /* Header and Navigation Styling */
+ header {
+        /*background-color: black;*/
+        color: white;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header img {
+        height: 120px;
+        margin-left: 60% ;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        margin-right: 120px;
+    }
+
+    nav ul li {
+        margin-left: 20px;
+    }
+/*
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    nav ul li a:hover {
+        text-decoration: underline;
+    }*/
+
+
+    nav ul li a {
+        font-family: 'MinecraftFont', sans-serif;
+        color: #fff;
+        font-size: 28px;
+        text-decoration: none;
+        padding: 10px 20px;
+        background-color: #6cb646;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        background-color: #006ac4;
+        cursor: url('ii.png'), auto; 
+    }
+
+    /* Container Styles */
+    .container {
+        flex: 1;
+        width: 80%;
+        margin: 20px auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    h3 {
+        color: #0056b3;
+    }
+
+    p {
+        color: #555;
+        line-height: 1.6;
+    }
+
+    ul {
+        margin: 10px 0;
+        padding-left: 20px;
+    }
+
+    ul li {
+        margin-bottom: 8px;
+    }
+    .container a{
+        color: #006ac4;
+        text-decoration: none; 
+        transition: .5s;
+
+    }
+    .container a:hover {
+            color: #6cb646;
+            text-decoration: underline;
+            cursor: url('ii.png'), auto; 
+            
+        }
+
+    .apply-btn {
+        display: inline-block;
+        background-color: #006ac4;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .apply-btn:hover {
+        background-color: #6cb646;
+        cursor: url('ii.png'), auto; 
+    }
+
+
+    /* Footer Styling */
+    footer {
+        background-color: #333;
+        color: #bbb;
+        text-align: center;
+        padding: 20px 0;
+        margin-top: auto; /* Ensures footer is pushed to the bottom */
+    }
+
+    footer p {
+        margin: 0;
+        font-family: 'MinecraftFont', sans-serif;
+        font-size: larger;
+        color: #6cb646;
+    }
+
+        /* Responsive Media Queries */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul {
+                flex-direction: column;
+                margin-top: 10px;
+            }
+
+            nav ul li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+
+            header img {
+                margin-left: 0;
+            }
+
+            .container {
+                width: 100%; /* Full width on mobile */
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 22px; /* Smaller title on mobile */
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+
+            .apply-btn {
+                width: 100%; /* Full width button on mobile */
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 20px;
+            }
+
+            h3 {
+                font-size: 16px;
+            }
+
+            p, ul li {
+                font-size: 14px;
+            }
+
+            nav ul li a {
+                font-size: 16px;
+                padding: 8px 12px;
+            }
+
+            .apply-btn {
+                font-size: 14px;
+                padding: 8px 10px;
+            }
+
+            footer p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+     <!-- Header Section -->
+     <header>
+        <a href="index.html"><img src="c.png" alt="Craft Innovations Logo"></a>
+        <nav>
+            <ul>
+                <li><a href="https://craftinnovationsgroup.com/">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="joinus.html">Careers</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+    <h1>Open Positions</h1>
+    <hr>
+    
+    <!-- Software Engineer Job Post -->
+    <a href="SoftwareEngineer.html">
+        Software Engineer
+    </a>
+
+    <br><br>
+
+
+    <!-- Frontend Developer Job Post -->
+     <!--
+    <a href="mailto:hr@craftinnovationsgroup.com?subject=Application for Frontend Developer Position&body=Dear HR, %0D%0A%0D%0APlease find my CV and Profile attached for the Frontend Developer position.%0D%0A%0D%0ABest regards,%0D%0A[Your Name]" target="_blank">
+        Frontend Developer
+    </a>
+    -->
+
+</div>
+<footer>
+    <p>&copy; 2024 Craft Innovations. All rights reserved.</p>
+</footer>
+</body>
+</html>
